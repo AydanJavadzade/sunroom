@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 import MainNavbar from "@/components/mainNavbar";
 import { usePathname } from "next/navigation";
 import ClientNavbar from "@/components/clientNavbar";
+import ClientFooter from "@/components/clientFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ClientNavbar/>
         {children}
-        <Footer />
+       <ClientFooter/>
       </body>
     </html>
   );
