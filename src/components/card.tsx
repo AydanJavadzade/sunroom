@@ -11,7 +11,7 @@ const Card: React.FC<CardProps> = ({ img, title }) => {
  
     <div className=' w-3/4'>
       <Image style={{ objectFit: "contain" }} width={250} height={250} src={img} alt="img" loading='eager' />
-      <h1 className='text-sans mt-3 text-md'>{title}</h1>
+      <h1 className='text-sans mt-3 text-lg'>{title}</h1>
     </div>
     
 
