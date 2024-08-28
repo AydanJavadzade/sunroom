@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Card from "./card";
-import PrevArrow from "./PrevArrow";
-import NextArrow from "./NextArrow";
+// import PrevArrow from "./PrevArrow";
+// import NextArrow from "./NextArrow";
 
 const images = [
   { img: "/pergola.png" },
@@ -17,15 +17,15 @@ const images = [
 
 
 function DynamicSlides() {
-  const [slides, setSlides] = useState([1, 2, 3, 4, 5, 6]);
-  const handleClick = () => {
-    setSlides(prevSlides =>
-      prevSlides.length === 6
-        ? [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        : [1, 2, 3, 4, 5, 6]
-    );
+  // const [slides, setSlides] = useState([1, 2, 3, 4, 5, 6]);
+  // const handleClick = () => {
+  //   setSlides(prevSlides =>
+  //     prevSlides.length === 6
+  //       ? [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  //       : [1, 2, 3, 4, 5, 6]
+  //   );
 
-  };
+  // };
 
   const settings = {
     dots: true,
@@ -72,7 +72,6 @@ function DynamicSlides() {
 
   return (
     <div className='flex flex-col h-3/4  w-[100%] gap-5'>
-
       <div className="flex justify-between">
       <h1 className="text-3xl font-sans font-bold ml-10">Meet our collection</h1>
         {/* <div className="flex">

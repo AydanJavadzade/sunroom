@@ -22,18 +22,15 @@ declare module 'react-slick' {
     nextArrow?: React.ReactElement<CustomArrowProps>;
     prevArrow?: React.ReactElement<CustomArrowProps>;
     responsive?: ResponsiveSettings[];
-    // Other settings can be added here
   }
-  // ResponsiveSettings interface
 export interface ResponsiveSettings {
   breakpoint: number;
   settings: {
     slidesToShow?: number;
     slidesToScroll?: number;
-    // Diğer slide ayarları buraya eklenebilir
+   
   };
 }
-
   export default class Slider extends React.Component<Settings & React.PropsWithChildren<{}>> {}
 }
 

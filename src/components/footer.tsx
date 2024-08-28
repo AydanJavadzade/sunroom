@@ -11,7 +11,7 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className='min-h-[800px] w-[100%]  bg-black text-white flex flex-col gap-10'>
+    <footer className='relative -mt-[40px] md:-mt-[100px] min-h-[900px] w-[100%]  bg-black text-white flex flex-col items-center justify-center pt-[30px] gap-10'>
       <div className='flex flex-col  h-1/4 justify-center items-center'>
         <div className='w-[400px] h-[100px] mt-10 hidden md:block'>
           <Image src={'/footerOutdoor.png'} width={400} height={100} alt={''} />
@@ -113,7 +113,7 @@ const Footer = () => {
 
       </div>
       <div className='w-[90%] mx-auto'><Image src={'/horizontal.png'} width={1500} height={1} alt="" /></div>
-      <div className='w-[100%] h-1/4 p-4 text-center flex justify-center items-center mt-5'><p>All Rights Reserved By The Outdorra Inc  /  US.California  /  2023</p></div>
+      <div className='w-[100%] h-1/4 p-4 text-center flex justify-center items-center mt-5'><p className=''>All Rights Reserved By The Outdorra Inc  /  US.California  /  2023</p></div>
 
     </footer>
   )

@@ -1,7 +1,7 @@
-import Footer from '@/components/footer'
-import Navbar from '@/components/navbar'
-import Responsive from '@/components/projectSlider'
-import DynamicSlides from '@/components/slider'
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import Responsive from '@/components/ProjectSlider'
+import DynamicSlides from '@/components/Slider'
 import React from 'react'
 
 const LoginPage = () => {

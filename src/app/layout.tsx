@@ -3,12 +3,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import MainNavbar from "@/components/mainNavbar";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import MainNavbar from "@/components/MainNavbar";
 import { usePathname } from "next/navigation";
-import ClientNavbar from "@/components/clientNavbar";
-import ClientFooter from "@/components/clientFooter";
+import ClientNavbar from "@/components/ClientNavbar";
+import ClientFooter from "@/components/ClientFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 

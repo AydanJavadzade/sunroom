@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import Menu from './menu'
-import Search from './search'
-import Profile from './profile'
+import Menu from './Menu'
+import Search from './Search'
+import Profile from './Profile'
 
 
 const MainNavbar = () => {
