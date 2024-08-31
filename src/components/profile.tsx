@@ -14,7 +14,7 @@ const Profile = () => {
 
     const handleProfile = () => {
         if (!isLoggedIn) {
-            router.push("/login")
+            router.push("api/auth/signin")
         }
         setProfileOpen((pre) => !pre)
 
@@ -22,17 +22,17 @@ const Profile = () => {
 
     return (
         <div className="relative ">
-        <div
-            onClick={handleProfile}
-            className="  w-5 h-5 -ml-8">
+            <div
+                onClick={handleProfile}
+                className="  w-5 h-5 -ml-8">
 
-            <CgProfile size={20} />
+                <CgProfile size={20} />
 
-            {profileOpen && <div className="absolute p-4 rounded-md top-9 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20">
-                <Link href="/">Profile</Link>
-                <div>Logout</div>
-            </div>}
-        </div>
+                {profileOpen && <div className="absolute p-4 rounded-md top-9 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20">
+                    <Link href="/">Profile</Link>
+                    <div>Logout</div>
+                </div>}
+            </div>
         </div>
     )
 

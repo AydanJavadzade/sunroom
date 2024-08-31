@@ -4,12 +4,13 @@ import React from 'react'
 import Menu from './Menu'
 import Search from './Search'
 import Profile from './Profile'
+import BurgerMenu from './BurgerMenu'
 
 
 const Navbar = () => {
 
     return (
-        <div className='h-20 px-4  bg-red-100 '>
+        <div className='h-20 px-4'>
             {/*MOBILE */}
             <div className=' flex items-center justify-between h-full relative md:hidden text-black '>
                 <Link href="/">
@@ -38,16 +39,16 @@ const Navbar = () => {
                     </div>
 
                 </Link>
-                <Menu />
+                <Menu/>
             </div>
             {/*BIGGER SCREEN */}
             <div className='hidden md:flex items-center justify-between h-full'>
                 {/*LEFT*/}
                 <div className='1/3' >
-                    <Image src="/logo.png" alt="logo" width={200} height={150} loading="eager" className='bg-grey-200' />
+                    <Image  src="/outdoorblack.png" alt="logo" width={200} height={150} loading="eager" className='bg-grey-200' />
                 </div>
                 {/*RIGHT*/}
-                <div className='w-2/3 flex justify-center items-center gap-10 text-white font-Helvetica Now Display'>
+                <div className='w-2/3 flex justify-center items-center gap-10 text-black font-Helvetica Now Display'>
 
                     <Link href="/">Sunroom</Link>
                     <Link href="/louver">Louver</Link>
@@ -56,6 +57,7 @@ const Navbar = () => {
                     <Link href="/windows & doors">Windows & Doors</Link>
                     <Search />
                     <Profile/>
+                    <BurgerMenu/>
 
                 </div>
             </div>

@@ -4,6 +4,7 @@ import React from 'react'
 import Menu from './Menu'
 import Search from './Search'
 import Profile from './Profile'
+import BurgerMenu from './BurgerMenu'
 
 
 const MainNavbar = () => {
@@ -54,8 +55,8 @@ const MainNavbar = () => {
                     <Link href="/blinds">Blinds</Link>
                     <Link href="/windows & doors">Windows & Doors</Link>
                     <Search />
-                    <Profile/>
-
+                    <Profile />
+                            <BurgerMenu />
                 </div>
             </div>
         </div>

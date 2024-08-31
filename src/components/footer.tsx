@@ -1,17 +1,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Input } from 'postcss';
+// import { Input } from 'postcss';
 import React from 'react'
 import { FaChevronRight } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+// import { MdEmail } from "react-icons/md";
+// relative -mt-[40px] md:-mt-[100px]
 
 const Footer = () => {
   return (
-    <footer className='relative -mt-[40px] md:-mt-[100px] min-h-[900px] w-[100%]  bg-black text-white flex flex-col items-center justify-center pt-[30px] gap-10'>
+    <footer className=' min-h-[900px] w-[100%]  bg-black text-white flex flex-col items-center justify-center pt-[30px] gap-10'>
       <div className='flex flex-col  h-1/4 justify-center items-center'>
         <div className='w-[400px] h-[100px] mt-10 hidden md:block'>
           <Image src={'/footerOutdoor.png'} width={400} height={100} alt={''} />
