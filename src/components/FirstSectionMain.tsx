@@ -5,7 +5,7 @@ import MainNavbar from './MainNavbar'
 
 const Header = () => {
     return (
-        <header className="relative w-full h-[700px] bg-[url(/fon.png)] bg-cover bg-no-repeat p-3 md:pd-0">
+        <header className="relative w-full h-[700px] bg-[url(/fon.png)] bg-cover bg-no-repeat p-3 md:pd-0 ">
             <div className="md:w-[95%] w-[100%] mx-auto h-[100%]">
                 <MainNavbar/>
                 <div className="w-full md:w-2/3 h-56 text-white ml-5 my-24">

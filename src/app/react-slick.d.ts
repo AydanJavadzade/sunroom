@@ -34,5 +34,11 @@ export interface ResponsiveSettings {
   export default class Slider extends React.Component<Settings & React.PropsWithChildren<{}>> {}
 }
 
-  
+  export interface Project{
+    image:string;
+    title:string;
+    address:string;
+    product:string;
+    about:string
+  }
   

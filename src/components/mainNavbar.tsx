@@ -1,18 +1,35 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import Menu from './Menu'
-import Search from './Search'
-import Profile from './Profile'
-import BurgerMenu from './BurgerMenu'
-
+ "use client"
+ import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Menu from './Menu';
+import Search from './Search';
+import Profile from './Profile';
+import BurgerMenu from './BurgerMenu';
 
 const MainNavbar = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
-        <div className=' w-full h-20 px-8 bg-transparent '>
+        <div className={`w-full h-20 px-8 text-white transition-all duration-300 ${isScrolled ? 'fixed top-0 left-0 bg-black shadow-lg z-50' : 'bg-transparent'} `}>
             {/*MOBILE */}
-            <div className=' flex items-center justify-between h-full relative md:hidden '>
+            <div className='flex items-center justify-between h-full relative md:hidden'>
                 <Link href="/">
                     <div className='w-32 h-28 flex gap-2'>
                         <Image
@@ -21,21 +38,24 @@ const MainNavbar = () => {
                             alt=""
                             width={35}
                             height={35}
-                            loading="eager" />
+                            loading="eager"
+                        />
                         <Image
                             style={{ objectFit: "contain" }}
                             src="/Plus.png"
                             alt=""
                             width={35}
                             height={35}
-                            loading="eager" />
+                            loading="eager"
+                        />
                         <Image
                             style={{ objectFit: "contain" }}
                             src="/Vector1.png"
                             alt=""
                             width={35}
                             height={35}
-                            loading="eager" />
+                            loading="eager"
+                        />
                     </div>
                 </Link>
                 <Menu />
@@ -43,24 +63,39 @@ const MainNavbar = () => {
             {/*BIGGER SCREEN */}
             <div className='hidden md:flex items-center justify-between h-full'>
                 {/*LEFT*/}
-                <div className='1/3' >
+                <div className='mr-5'>
                     <Image src="/logo.png" alt="logo" width={200} height={150} loading="eager" className='bg-grey-200' />
                 </div>
                 {/*RIGHT*/}
-                <div className='w-2/3 flex justify-center items-center gap-10 text-white font-Helvetica Now Display'>
+                <div className='w-2/3 ml-9 p-2 hidden md:flex justify-center items-center gap-10 font-Helvetica text-[12px] md:text-[14px] xl:text-[16px]'>
 
-                    <Link href="/">Sunroom</Link>
-                    <Link href="/louver">Louver</Link>
-                    <Link href="/pergola">Pergola</Link>
-                    <Link href="/blinds">Blinds</Link>
-                    <Link href="/windows & doors">Windows & Doors</Link>
+                    <Link href="/" className="relative group">
+                        Sunroom
+                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                    <Link href="/louver" className="relative group">
+                        Louver
+                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                    <Link href="/pergola" className="relative group">
+                        Pergola
+                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                    <Link href="/blinds" className="relative group">
+                        Blinds
+                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                    <Link href="/windows & doors" className="relative group">
+                        Windows & Doors
+                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
                     <Search />
                     <Profile />
-                            <BurgerMenu />
+                    <BurgerMenu />
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default MainNavbar
+export default MainNavbar;

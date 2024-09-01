@@ -8,12 +8,15 @@ import { FaArrowRightLong } from 'react-icons/fa6'
 const ThirdSectionMain = () => {
   return (
     <div className="min-h-[700px] w-100% flex flex-col gap-5 p-6">
+{/* WHU OUTDOORA */}
     <div className=" gap-9 h-1/2 md:w-[95%] w-[100%] mx-auto py-5 justify-between hidden xl:flex" >
       <div className="w-[15%] h-[70%] mt-3">
         <Image style={{ objectFit: "cover" }} src={"/3rd-section.png"} alt={" "} width={200} height={300} loading="eager" layout="responsive" />
       </div>
+
       <div className="w-[65%] font-sans flex flex-col gap-6  mt-3">
-        {/* why outdoora */}
+
+        {/* why outdoora text */}
         <div className="h-1/5 flex flex-col  gap-4">
           <h1 className="text-4xl font-semibold font-sans  text-slate-800">WHY OUTDORRA</h1>
           <p className="w-2/3 font-medium">Enhance your living environment.
@@ -58,6 +61,7 @@ const ThirdSectionMain = () => {
       </div>
     </div>
 
+{/* LET US INSPIRE YOU */}
     <div className=" hidden xl:flex md:w-[95%] w-[100%] h-screen mx-auto flex-col gap-3 p-2">
       <div className="p-1">
         <h1 className="text-3xl font-sans font-bold h-[100%]  ">Let Us Inspire You!</h1>

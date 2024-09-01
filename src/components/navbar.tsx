@@ -10,28 +10,29 @@ import BurgerMenu from './BurgerMenu'
 const Navbar = () => {
 
     return (
-        <div className='h-20 px-4'>
+        <div className='w-[100%] relative h-24'>
+        <div className='h-20 w-[100%] bg-white px-12 fixed z-50'>
             {/*MOBILE */}
             <div className=' flex items-center justify-between h-full relative md:hidden text-black '>
                 <Link href="/">
                 <div className='w-32 h-28 flex gap-2'>
                         <Image
                             style={{ objectFit: "contain" }}
-                            src="/Vector.png"
+                            src="/VectorBlack.png"
                             alt=""
                             width={35}
                             height={35}
                             loading="eager" />
                         <Image
                             style={{ objectFit: "contain" }}
-                            src="/Plus.png"
+                            src="/Plusblack.png"
                             alt=""
                             width={35}
                             height={35}
                             loading="eager" />
                         <Image
                             style={{ objectFit: "contain" }}
-                            src="/Vector1.png"
+                            src="/Vector1Black.png"
                             alt=""
                             width={35}
                             height={35}
@@ -50,11 +51,27 @@ const Navbar = () => {
                 {/*RIGHT*/}
                 <div className='w-2/3 flex justify-center items-center gap-10 text-black font-Helvetica Now Display'>
 
-                    <Link href="/">Sunroom</Link>
-                    <Link href="/louver">Louver</Link>
-                    <Link href="/pergola">Pergola</Link>
-                    <Link href="/blinds">Blinds</Link>
-                    <Link href="/windows & doors">Windows & Doors</Link>
+                   
+                    <Link href="/" className="relative group">
+                        Sunroom
+                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                    <Link href="/louver" className="relative group">
+                        Louver
+                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                    <Link href="/pergola" className="relative group">
+                        Pergola
+                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                    <Link href="/blinds" className="relative group">
+                        Blinds
+                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                    <Link href="/windows & doors" className="relative group">
+                        Windows & Doors
+                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
                     <Search />
                     <Profile/>
                     <BurgerMenu/>
@@ -62,7 +79,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
-
+        </div>
     )
 }
 
