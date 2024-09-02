@@ -4,14 +4,18 @@ import React, { useState } from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { usePathname } from "next/navigation";
+
 
 const Menu = () => {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
   const [open, setOpen] = useState(false)
 
   return (
     <div className=''>
-      <Image src="/menu.png" alt="menu" width={24} height={24} className="cursor-pointer text-red" onClick={()=>{setOpen((pre)=>!pre)}}/>
-      {/* <GiHamburgerMenu onClick={() => { setOpen((pre) => !pre) }} className='text-black cursor-pointer' size={25} /> */}
+      {/* <Image src="/menu.png" alt="menu" width={24} height={24} className="cursor-pointer text-red" onClick={()=>{setOpen((pre)=>!pre)}}/> */}
+      <GiHamburgerMenu onClick={() => { setOpen((pre) => !pre) }} className={`${isHomePage ? 'text-white':'text-black'} cursor-pointer`} size={25} />
 
 
       <div
@@ -20,11 +24,11 @@ const Menu = () => {
       >
         {open && <div className="flex flex-col items-center justify-center gap-4 h-full text-xl">
           <Link href="/">Home</Link>
-          <Link href="/louver">Projects</Link>
-          <Link href="/pergola">About Us</Link>
-          <Link href="/blinds">Request a Quote</Link>
-          <Link href="/windows & doors">Contact Us</Link>
-         
+          <Link href="/projects">Projects</Link>
+          <Link href="/about">About Us</Link>
+          <Link href="request">Request a Quote</Link>
+          <Link href="/contact">Contact Us</Link>
+
           <Link href="/">Sunroom</Link>
           <Link href="/louver">Louver</Link>
           <Link href="/pergola">Pergola</Link>

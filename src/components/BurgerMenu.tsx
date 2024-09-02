@@ -22,10 +22,10 @@ const BurgerMenu = () => {
       >
        {open && <div className="flex flex-col items-center justify-center gap-4 h-full">
           <Link href="/">Home</Link>
-          <Link href="/louver">Projects</Link>
-          <Link href="/pergola">About Us</Link>
-          <Link href="/blinds">Request a Quote</Link>
-          <Link href="/windows & doors">Contact Us</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/about">About Us</Link>
+          <Link href="request">Request a Quote</Link>
+          <Link href="/contact">Contact Us</Link>
         </div>}
       </div>
     </div>
