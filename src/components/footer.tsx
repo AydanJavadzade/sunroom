@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-// import { Input } from 'postcss';
 import React from 'react'
 import { FaChevronRight } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";

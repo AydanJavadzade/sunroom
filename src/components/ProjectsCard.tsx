@@ -14,9 +14,9 @@ import { FaChevronRight } from "react-icons/fa";
 
 const ProjectsCard:React.FC<Project> = ({image,title,address,product}) => {
     return (
-        <div className='flex flex-col h-[600px] w-[30%] font-sans shadow-md pb-1'>
+        <div className='flex flex-col h-[600px] w-[100%] md:w-[30%] font-sans shadow-md pb-1'>
             {/* foto */}
-            <div className='relative h-1/2 w-[100%]'>
+            <div className='relative h-1/2 w-[100%] transition-transform duration-500 ease-in-out transform hover:scale-95'>
                 <Image style={{ objectFit: "cover", borderRadius: "20px" }} src={image} alt={'foto'} fill />
             </div>
             {/* describtion */}

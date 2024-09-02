@@ -16,7 +16,7 @@ const BurgerMenu = () => {
 
 
       <div
-        className={`fixed top-20 right-0 h-[calc(100vh-80px)] bg-black text-white text-2xl z-10 transition-all duration-300 ease-in-out transform ${
+        className={`fixed top-24 right-0 h-[calc(100vh-80px)] bg-black text-white rounded-xl text-2xl z-10 transition-all duration-300 ease-in-out transform ${
           open ? 'translate-x-0 w-1/3' : 'translate-x-full w-0'
         }`}
       >

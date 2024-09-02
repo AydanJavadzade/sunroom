@@ -68,12 +68,12 @@ const ThirdSectionMain = () => {
       </div>
 
       <div className="w-[100%] h-full flex justify-between gap-3 p">
-        <div className="w-[30%] h-[95%]  p-1">
+        <div className="w-[30%] h-[95%] p-1 transition-transform duration-300 ease-in-out transform hover:scale-105">
           <Image style={{ objectFit: "cover" }} src={"/home1.png"} alt={""} width={200} height={400} layout="responsive" />
         </div>
 
         <div className="w-[30%] p-1 h-[95%] flex flex-col justify-between">
-          <div className="h-1/3 w-[100%]">
+          <div className="h-1/3 w-[100%] transition-transform duration-300 ease-in-out transform hover:scale-105">
             <Image style={{ objectFit: "cover" }} src={"/home2.png"} alt={""} width={150} height={150} layout="responsive" />
           </div>
 
@@ -91,7 +91,7 @@ const ThirdSectionMain = () => {
         </div>
 
         <div className="w-[30%] p-1 h-[95%] flex flex-col justify-between text-blue-500">
-          <div>
+          <div className='transition-transform duration-300 ease-in-out transform hover:scale-105'>
             <Image style={{ objectFit: "cover" }} src={"/home3.png"} alt={""} width={200} height={300} layout="responsive" />
           </div>
           <Link target="_blank" href={"/projects"}><div className="flex items-center g-3"><FaArrowRightLong /><p className="ml-2">See All Our Projects</p></div></Link>
