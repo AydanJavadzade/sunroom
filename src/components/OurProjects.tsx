@@ -7,7 +7,7 @@ import { Category } from './ProjectsTabs';
 interface OurProjectsProps {
     category: Category['category'];
 }
- 
+
 
 interface Project {
     id: number;
@@ -15,10 +15,11 @@ interface Project {
     title: string;
     address: string;
     product: string;
-    category:"home" | "business";
+    category: "home" | "business";
+    describtion:string
 }
 
-const projects: Project[] = [
+export const projects: Project[] = [
     {
         id: 0,
         image: "/ourproject1.png",
@@ -26,6 +27,7 @@ const projects: Project[] = [
         address: "Trani-Italy",
         product: "Sloped Pergolas, Glass walls",
         category: "home",
+        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
     },
     {
         id: 1,
@@ -34,6 +36,7 @@ const projects: Project[] = [
         address: "Portorose - Slovenia",
         product: "Bioclimatic Pergolas",
         category: "business",
+        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
     },
     {
         id: 2,
@@ -42,6 +45,8 @@ const projects: Project[] = [
         address: "Antibes - France",
         product: "Sloped Pergolas, Glass walls",
         category: "home",
+        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+
     },
     {
         id: 3,
@@ -50,6 +55,8 @@ const projects: Project[] = [
         address: "Portorose - Slovenia",
         product: "Bioclimatic Pergolas",
         category: "business",
+        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+
     },
     {
         id: 4,
@@ -58,6 +65,8 @@ const projects: Project[] = [
         address: "Antibes - France",
         product: "Sloped Pergolas, Glass walls",
         category: "home",
+        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+
     },
     {
         id: 5,
@@ -66,29 +75,31 @@ const projects: Project[] = [
         address: "Trani-Italy",
         product: "Sloped Pergolas, Glass walls",
         category: "business",
+        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+
     },
 ];
 
-const OurProjects: React.FC<OurProjectsProps>= ({category}) => {
-   
+const OurProjects: React.FC<OurProjectsProps> = ({ category }) => {
+
 
     return (
-            <div className="w-full flex flex-col h-[90%] my-8 p-2  md:flex-wrap md:flex-row justify-between gap-14">
-                {projects
-                    .filter(
-                        (project) => category === "all" || project.category === category
-                    )
-                    .map(({ id, image, title, address, product }) => (
+        <div className="w-full flex flex-col h-[90%] my-8 p-2  md:flex-wrap md:flex-row justify-between gap-14">
+            {projects
+                .filter(
+                    (project) => category === "all" || project.category === category
+                )
+                .map(({ id, image, title, address, product }) => (
 
-                        <ProjectsCard
-                            image={image}
-                            title={title}
-                            address={address}
-                            product={product}
-                        />
-                    ))}
-            </div>
-          
+                    <ProjectsCard
+                        id={id}
+                        image={image}
+                        title={title}
+                        address={address}
+                        product={product} />
+                ))}
+        </div>
+
     )
 }
 

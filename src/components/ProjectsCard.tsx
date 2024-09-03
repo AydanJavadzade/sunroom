@@ -1,5 +1,6 @@
-import { Button } from '@nextui-org/button'
+"use client"
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import { FaChevronRight } from "react-icons/fa";
 
@@ -9,10 +10,19 @@ import { FaChevronRight } from "react-icons/fa";
     title:string;
     address:string;
     product:string;
+    id:number
   }
   
 
-const ProjectsCard:React.FC<Project> = ({image,title,address,product}) => {
+const ProjectsCard:React.FC<Project> = ({id,image,title,address,product}) => {
+    const router= useRouter()
+
+
+  const handleFindOutMore = () => {
+    const url="/projects/" + id + "-" + title.toLowerCase().replaceAll(" "," ")
+    router.push(url);
+  };
+  
     return (
         <div className='flex flex-col h-[600px] w-[100%] md:w-[30%] font-sans shadow-md pb-1'>
             {/* foto */}
@@ -33,7 +43,7 @@ const ProjectsCard:React.FC<Project> = ({image,title,address,product}) => {
                         <p>{product}</p>
                     </div>
                 </div>
-              <button className='rounded-full w-[75%] h-[50px] flex items-center justify-between border border-x border-black py-1 px-4 hover:bg-primary text-base font-semibold transition duration-300 ease-in-out'>
+              <button onClick={handleFindOutMore} className='rounded-full w-[75%] h-[50px] flex items-center justify-between border border-x border-black py-1 px-4 hover:bg-primary text-base font-semibold transition duration-300 ease-in-out'>
                 <p>Find Out More</p>
                 <FaChevronRight/>
                 </button>
