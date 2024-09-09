@@ -1,22 +1,29 @@
 "use client"
 import React, { useContext, useState } from 'react'
 import ProjectsCard from './ProjectsCard';
-import CategoryContextProvider, { categoryContext } from './CategoryContext';
 import { Category } from './ProjectsTabs';
+import { useRouter } from 'next/navigation';
 
 interface OurProjectsProps {
     category: Category['category'];
 }
 
 
-interface Project {
+export interface Project {
     id: number;
     image: string;
     title: string;
     address: string;
     product: string;
     category: "home" | "business";
-    describtion:string
+    describtion: string;
+    need: string;
+    features: string;
+    used: {
+        title: string;
+        describtion: string
+    };
+    productImage: string
 }
 
 export const projects: Project[] = [
@@ -27,7 +34,14 @@ export const projects: Project[] = [
         address: "Trani-Italy",
         product: "Sloped Pergolas, Glass walls",
         category: "home",
-        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+        describtion: "Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis",
+        need: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        features: "Id lorem sapien lectus hendrerit dignissim dui facilisis viverra eleifend. A non vehicula sit eget consequat. Nisi erat at mattis quisque.Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        used: {
+            title: "Sloped Pergola used in this Project",
+            describtion: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis."
+        },
+        productImage: "/product.png",
     },
     {
         id: 1,
@@ -36,7 +50,14 @@ export const projects: Project[] = [
         address: "Portorose - Slovenia",
         product: "Bioclimatic Pergolas",
         category: "business",
-        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+        describtion: "Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis",
+        need: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        features: "Id lorem sapien lectus hendrerit dignissim dui facilisis viverra eleifend. A non vehicula sit eget consequat. Nisi erat at mattis quisque.Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        used: {
+            title: "Sloped Pergola used in this Project",
+            describtion: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis."
+        },
+        productImage: "/product.png"
     },
     {
         id: 2,
@@ -45,7 +66,14 @@ export const projects: Project[] = [
         address: "Antibes - France",
         product: "Sloped Pergolas, Glass walls",
         category: "home",
-        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+        describtion: "Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis",
+        need: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        features: "Id lorem sapien lectus hendrerit dignissim dui facilisis viverra eleifend. A non vehicula sit eget consequat. Nisi erat at mattis quisque.Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        used: {
+            title: "Sloped Pergola used in this Project",
+            describtion: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis."
+        },
+        productImage: "/product.png"
 
     },
     {
@@ -55,7 +83,14 @@ export const projects: Project[] = [
         address: "Portorose - Slovenia",
         product: "Bioclimatic Pergolas",
         category: "business",
-        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+        describtion: "Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis",
+        need: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        features: "Id lorem sapien lectus hendrerit dignissim dui facilisis viverra eleifend. A non vehicula sit eget consequat. Nisi erat at mattis quisque.Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        used: {
+            title: "Sloped Pergola used in this Project",
+            describtion: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis."
+        },
+        productImage: "/product.png"
 
     },
     {
@@ -65,7 +100,14 @@ export const projects: Project[] = [
         address: "Antibes - France",
         product: "Sloped Pergolas, Glass walls",
         category: "home",
-        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+        describtion: "Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis",
+        need: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        features: "Id lorem sapien lectus hendrerit dignissim dui facilisis viverra eleifend. A non vehicula sit eget consequat. Nisi erat at mattis quisque.Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        used: {
+            title: "Sloped Pergola used in this Project",
+            describtion: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis."
+        },
+        productImage: "/product.png"
 
     },
     {
@@ -75,14 +117,25 @@ export const projects: Project[] = [
         address: "Trani-Italy",
         product: "Sloped Pergolas, Glass walls",
         category: "business",
-        describtion:"Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis"
+        describtion: "Scelerisque netus at ornare duis facilisis diam placerat. Rhoncus lacus eu porttitor et nibh suscipit cursus sollicitudin. Sit gravida aliquam amet tellus vitae morbi. Feugiat ac tincidunt euismod amet ante sed aliquam cursus. Posuere vulputate quis",
+        need: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        features: "Id lorem sapien lectus hendrerit dignissim dui facilisis viverra eleifend. A non vehicula sit eget consequat. Nisi erat at mattis quisque.Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis.",
+        used: {
+            title: "Sloped Pergola used in this Project",
+            describtion: "Venenatis neque odio tempor proin ultrices arcu turpis amet iaculis. Cursus maecenas tristique eget duis elit lectus turpis leo molestie. Cras quis libero porttitor faucibus. Scelerisque nec mattis."
+        },
+        productImage: "/product.png"
 
     },
 ];
 
 const OurProjects: React.FC<OurProjectsProps> = ({ category }) => {
 
+    const router = useRouter();
 
+    const handleFindOutMore = (id: number) => {
+        router.push(`/${id}`);
+    };
     return (
         <div className="w-full flex flex-col h-[90%] my-8 p-2  md:flex-wrap md:flex-row justify-between gap-14">
             {projects
@@ -90,13 +143,16 @@ const OurProjects: React.FC<OurProjectsProps> = ({ category }) => {
                     (project) => category === "all" || project.category === category
                 )
                 .map(({ id, image, title, address, product }) => (
-
-                    <ProjectsCard
-                        id={id}
+                    <div className='w-[30%]'>
+                        <ProjectsCard
+                        key={id}
                         image={image}
                         title={title}
                         address={address}
-                        product={product} />
+                        product={product}
+                        onClick={() => handleFindOutMore(id)} />
+                        </div>
+
                 ))}
         </div>
 

@@ -17,16 +17,7 @@ const images = [
 
 
 function DynamicSlides() {
-  // const [slides, setSlides] = useState([1, 2, 3, 4, 5, 6]);
-  // const handleClick = () => {
-  //   setSlides(prevSlides =>
-  //     prevSlides.length === 6
-  //       ? [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  //       : [1, 2, 3, 4, 5, 6]
-  //   );
-
-  // };
-
+ 
   const settings = {
     dots: true,
     infinite: true,
@@ -58,7 +49,6 @@ function DynamicSlides() {
         }
       },
     ]
-
   };
 
   const [loaded, setLoaded] = useState(false);
@@ -67,7 +57,7 @@ function DynamicSlides() {
     setLoaded(true);
   }, []);
 
-  if (!loaded) return null; // Slider component only renders after it's loaded
+  if (!loaded) return null;  
 
 
   return (

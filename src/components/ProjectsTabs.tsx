@@ -1,7 +1,5 @@
 "use client";
-import { SetStateAction, useContext, useState } from "react";
-import ProjectsCard from "./ProjectsCard";
-import CategoryContextProvider, { categoryContext } from "./CategoryContext";
+import {useState } from "react";
 import { SlArrowDown } from "react-icons/sl";
 import OurProjects from "./OurProjects";
 
@@ -57,9 +55,6 @@ const [category,setCategory]=useState<Category["category"]>("all")
             </div>
         <OurProjects category={category} />
         </div>
-   
-        
-           
         </>
     );
 };

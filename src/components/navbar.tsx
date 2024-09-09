@@ -52,23 +52,23 @@ const Navbar = () => {
                 <div className='w-2/3 flex justify-center items-center gap-10 text-black font-Helvetica Now Display'>
 
                    
-                    <Link href="/" className="relative group">
+                    <Link href="/products/sunroom" className="relative group">
                         Sunroom
                         <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link href="/louver" className="relative group">
+                    <Link href="/products/louver" className="relative group">
                         Louver
                         <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link href="/pergola" className="relative group">
+                    <Link href="/products/pergola" className="relative group">
                         Pergola
                         <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link href="/blinds" className="relative group">
+                    <Link href="/products/blinds" className="relative group">
                         Blinds
                         <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link href="/windows & doors" className="relative group">
+                    <Link href="/products/windows & doors" className="relative group">
                         Windows & Doors
                         <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                     </Link>

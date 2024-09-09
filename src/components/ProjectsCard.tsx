@@ -10,21 +10,14 @@ import { FaChevronRight } from "react-icons/fa";
     title:string;
     address:string;
     product:string;
-    id:number
-  }
+    // id:number;
+    onClick:any}
   
 
-const ProjectsCard:React.FC<Project> = ({id,image,title,address,product}) => {
-    const router= useRouter()
-
-
-  const handleFindOutMore = () => {
-    const url="/projects/" + id + "-" + title.toLowerCase().replaceAll(" "," ")
-    router.push(url);
-  };
-  
+const ProjectsCard:React.FC<Project> = ({image,title,address,product,onClick}) => {
+ 
     return (
-        <div className='flex flex-col h-[600px] w-[100%] md:w-[30%] font-sans shadow-md pb-1'>
+        <div className='flex flex-col h-[600px] w-[100%] font-sans shadow-md pb-1'>
             {/* foto */}
             <div className='relative h-1/2 w-[100%] transition-transform duration-500 ease-in-out transform hover:scale-95'>
                 <Image style={{ objectFit: "cover", borderRadius: "20px" }} src={image} alt={'foto'} fill />
@@ -43,7 +36,7 @@ const ProjectsCard:React.FC<Project> = ({id,image,title,address,product}) => {
                         <p>{product}</p>
                     </div>
                 </div>
-              <button onClick={handleFindOutMore} className='rounded-full w-[75%] h-[50px] flex items-center justify-between border border-x border-black py-1 px-4 hover:bg-primary text-base font-semibold transition duration-300 ease-in-out'>
+              <button onClick={onClick} className='rounded-full w-[75%] h-[50px] flex items-center justify-between border border-x border-black py-1 px-5 hover:bg-black hover:text-white text-base font-semibold transition duration-300 ease-in-out'>
                 <p>Find Out More</p>
                 <FaChevronRight/>
                 </button>
