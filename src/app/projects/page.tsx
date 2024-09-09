@@ -1,4 +1,4 @@
-import OurProjects from '@/components/OurProjects';
+
 import Tabs from '@/components/ProjectsTabs'
 import RequestProject from '@/components/RequestProject';
 import Image from 'next/image'

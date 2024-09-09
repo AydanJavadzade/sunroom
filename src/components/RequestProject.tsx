@@ -11,6 +11,10 @@ const RequestProject = () => {
     const handleActiveService = () => {
         router.push("/request-service")
     }
+
+    const handleRequestProject=()=>{
+       router.push("/projects")
+    }
     return (
 
         <div className='text-white text-center flex flex-col justify-center items-center bg-black w-[600px] h-[250px] p-2 rounded-2xl'>
@@ -18,7 +22,7 @@ const RequestProject = () => {
             <span className='text-[12px]'>We are always ready to help you to get the best out of our services</span>
             <div className='text-blue-500 mb-5 cursor-pointer' onClick={handleActiveService}><p>7/24 Active Service</p> </div>
             
-            <Button onClick={handleActiveService} radius="full">
+            <Button onClick={ handleRequestProject} radius="full">
             <span className="mr-6">Request a Project</span>
                 <div className="flex items-center justify-center w-8 h-8 bg-black text-white rounded-full ml-6">
                 <FaChevronRight />
