@@ -34,7 +34,7 @@ const ProjectDetailPage = () => {
             />
             <ProjectsCardSlider />
 
-            <div className='h-1/3 w-[100%] m-auto flex justify-center items-center mb-7 bg-black'>
+            <div className='h-1/3 w-[80%] m-auto flex justify-center items-center mb-7 bg-black rounded-2xl'>
                 <RequestProject />
             </div>
 

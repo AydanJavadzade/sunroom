@@ -1,7 +1,7 @@
 "use client";
 import {useState } from "react";
-import { SlArrowDown } from "react-icons/sl";
 import OurProjects from "./OurProjects";
+import ScrollDown from "./ScrollDown";
 
 export interface Category{
     category:"all"|"home"|"business"
@@ -17,13 +17,8 @@ const [category,setCategory]=useState<Category["category"]>("all")
         <>
         <div>
         <div className="flex items-start justify-between h-1/5 mt-10">
-                <div className='hidden md:flex items-center gap-3 font-sans'>
-                    <div className=' flex w-[50px] h-[50px] rounded-full border-1  justify-center items-center hover:bg-black hover:text-white transition duration-300 ease-in-out'>
-                        <SlArrowDown />
-                    </div>
-                    <p>Scroll Down</p>
-                </div>
-
+        {/* scroll down */}
+                 <ScrollDown/>
 
                 <div className="w-[100%] md:w-[300px] flex justify-center items-center border border-black rounded-full p-2">
                     <button

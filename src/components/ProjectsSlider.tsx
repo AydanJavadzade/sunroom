@@ -13,7 +13,6 @@ const settings = {
     autoplaySpeed: 2000,
 }
 
-
 const ProjectsSlider = () => {
     const [loaded, setLoaded] = useState(false);
     useEffect(() => {

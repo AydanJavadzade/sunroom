@@ -18,7 +18,8 @@ const Search = () => {
         const name = formData.get("name") as string;
 
         if (name) {
-            router.push(`/products?name=${name}`)
+            // router.push(`/products?name=${name}`)
+            router.push(`/products/${name}`)
             setName("")
         }
     }

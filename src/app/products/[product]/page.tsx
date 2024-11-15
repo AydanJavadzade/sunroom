@@ -3,9 +3,7 @@ import React from 'react'
 
 const ProductPage= () => {
   return (
-    <div><ProductsPageCard params={{
-      product: ''
-    }}/></div>
+    <div><ProductsPageCard /></div>
   )
 }
 

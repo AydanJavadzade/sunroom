@@ -32,7 +32,7 @@ const ProjectsDetailCard: React.FC<ProjectDetail> = ({
 
 
     return (
-        <div className='w-[100%] h-fit font-sans'>
+        <div className='w-[100%] h-fit font-sans overflow-x-hidden'>
 
             <div className='h-full px-12 mb-10 flex flex-col  '>
                 {/* title describtion */}

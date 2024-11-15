@@ -5,19 +5,20 @@ import React from 'react'
 import { FaChevronRight } from "react-icons/fa";
 
 
- interface Product{
-    image:string;
-    title:string;
-    describtion:string;
-     }
-  
-    // const router = useRouter();
+interface Product {
+    image: string;
+    title: string;
+    describtion: string;
+    onClick: any
+}
 
-    // const handleFindOutMore = (id: number) => {
-    //     router.push(`/${id}`);
-    // };
-const ProductCard:React.FC<Product> = ({image,title,describtion}) => {
- 
+// const router = useRouter();
+
+// const handleFindOutMore = (id: number) => {
+//     router.push(`/${id}`);
+// };
+const ProductCard: React.FC<Product> = ({ image, title, describtion, onClick}) => {
+   
     return (
         <div className='flex flex-col h-[450px] w-[100%] font-sans shadow-md pb-1'>
             {/* foto */}
@@ -30,11 +31,11 @@ const ProductCard:React.FC<Product> = ({image,title,describtion}) => {
                 <div className='flex flex-col gap-3'>
                     <h1 className='text-2xl font-bold'>{title}</h1>
                     <p>{describtion}</p>
-                     
+
                 </div>
-              <button className='rounded-full w-[75%] h-[50px] flex items-center justify-between border border-x border-black py-1 px-5 hover:bg-black hover:text-white text-base font-semibold transition duration-300 ease-in-out'>
-                <p>Find Out More</p>
-                <FaChevronRight/>
+                <button onClick={onClick} className='rounded-full w-[75%] h-[50px] flex items-center justify-between border border-x border-black py-1 px-5 hover:bg-black hover:text-white text-base font-semibold transition duration-300 ease-in-out'>
+                    <p>Find Out More</p>
+                    <FaChevronRight />
                 </button>
             </div>
         </div>

@@ -145,14 +145,13 @@ const OurProjects: React.FC<OurProjectsProps> = ({ category }) => {
                 .map(({ id, image, title, address, product }) => (
                     <div className='w-[30%]'>
                         <ProjectsCard
-                        key={id}
-                        image={image}
-                        title={title}
-                        address={address}
-                        product={product}
-                        onClick={() => handleFindOutMore(id)} />
-                        </div>
-
+                            key={id}
+                            image={image}
+                            title={title}
+                            address={address}
+                            product={product}
+                            onClick={() => handleFindOutMore(id)} />
+                    </div>
                 ))}
         </div>
 

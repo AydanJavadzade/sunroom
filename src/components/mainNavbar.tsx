@@ -1,11 +1,12 @@
- "use client"
- import React, { useState, useEffect } from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Menu from './Menu';
 import Search from './Search';
 import Profile from './Profile';
 import BurgerMenu from './BurgerMenu';
+import { products } from './(products)/ProductsPageCard';
 
 const MainNavbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -68,27 +69,14 @@ const MainNavbar = () => {
                 </div>
                 {/*RIGHT*/}
                 <div className='w-2/3 ml-9 p-2 hidden md:flex justify-center items-center gap-10 font-Helvetica text-[12px] md:text-[14px] xl:text-[16px]'>
+                    {products.map((product) => {
+                        return <Link
+                            href={`/products/${product.type}`} className="relative group">
+                            {product.title}
+                            <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
+                    })}
 
-                    <Link href="/" className="relative group">
-                        Sunroom
-                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
-                    <Link href="/louver" className="relative group">
-                        Louver
-                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
-                    <Link href="/pergola" className="relative group">
-                        Pergola
-                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
-                    <Link href="/blinds" className="relative group">
-                        Blinds
-                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
-                    <Link href="/windows & doors" className="relative group">
-                        Windows & Doors
-                        <span className="absolute left-0 bottom-0 w-0 h-[3px] bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
                     <Search />
                     <Profile />
                     <BurgerMenu />
